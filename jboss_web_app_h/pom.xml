@@ -11,6 +11,7 @@
 
 
     <dependencies>
+        <!--*******************************jboss********************************-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
@@ -36,31 +37,44 @@
             <artifactId>resteasy-servlet-initializer</artifactId>
             <version>3.0.5.Final</version>
         </dependency>    
-        
         <dependency>
             <groupId>javax.json</groupId>
             <artifactId>javax.json-api</artifactId>
             <version>1.0</version>
         </dependency>
+        <!--*******************************jboss********************************-->
 
+
+       <!--*******************************mysql********************************-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
+        </dependency>
+       <!--*******************************mysql********************************-->
+         
+         
+        <!--*******************************hibernate********************************-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.3.10.Final</version>
+        </dependency>
+        <!--*******************************hibernate********************************-->
+    
+    
+        <!--*******************************junit********************************-->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.10</version>
             <scope>test</scope>
         </dependency>
-    
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.34</version>
-        </dependency>
+        <!--*******************************junit********************************-->
 
-    
     </dependencies>
     
-    
-    
+      
     
 
     <build>
