@@ -17,7 +17,6 @@ public class WebApplication extends Application {
 
    public WebApplication() {
       singletons.add(new GetRESTService());
-      singletons.add(new PostRESTService());
   }
 
    @Override
