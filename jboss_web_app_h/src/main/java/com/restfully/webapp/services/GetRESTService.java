@@ -5,9 +5,8 @@ package com.restfully.webapp.services;
  * @author 2015 Andrey Kolchev mailto: andreykolchev@gmail.com
  */
 
-import com.restfully.webapp.DAO.CountryDAO;
-import com.restfully.webapp.model.Country;
-import java.sql.SQLException;
+import com.restfully.webapp.DAO.CardDAO;
+import com.restfully.webapp.model.Card;
 import java.util.List;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,29 +18,26 @@ import javax.ws.rs.QueryParam;
 public class GetRESTService {
 
 
-    private final CountryDAO countryDAO = new CountryDAO();
+    private final CardDAO cardDAO = new CardDAO();
    
     
     @GET
-    @Path("/country")
+    @Path("/card")
     @Produces("application/javascript")
-    public String getCounry (@QueryParam("callback") String callback, 
-                             @QueryParam("country_id") int country_id, 
-                             @QueryParam("language_id") int language_id
-                            ) throws SQLException{
-        List<Country> countryList = countryDAO.find(country_id, language_id);
-        if (countryList.isEmpty())
-        //{throw new WebApplicationException(Response.Status.NO_CONTENT);}
-        {return (callback + "()");}
+    public String getAccCards (@QueryParam("callback") String callback, 
+                               @QueryParam("account_id") int account_id){
+        List<Card> cardList = cardDAO.getByAccId(account_id);
+        if (cardList==null) {return (callback + "()");}
         StringBuilder jsonStringBuilder = new StringBuilder();
         int i = 0;
-        for (Country country : countryList) {
-            jsonStringBuilder.append(country.toJsonString());
-            if (++i < countryList.size()) {
+        for (Card card : cardList) {
+            jsonStringBuilder.append(card.toJsonString());
+            if (++i < cardList.size()) {
                 jsonStringBuilder.append(",");
             }
         }
         return (callback + "([" + jsonStringBuilder.toString() + "])");
     }
+
       
 }

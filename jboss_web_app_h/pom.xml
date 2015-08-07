@@ -9,33 +9,37 @@
     <name>jboss_web_app</name>
     <description/>
 
+    <properties>
+        <jboss_resteasy.version>3.0.5.Final</jboss_resteasy.version>
+        <hibernate.version>4.3.8.Final</hibernate.version>
+    </properties>
 
     <dependencies>
         <!--*******************************jboss********************************-->
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.0.5.Final</version>
+            <version>${jboss_resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-client</artifactId>
-            <version>3.0.5.Final</version>
+            <version>${jboss_resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>async-http-servlet-3.0</artifactId>
-            <version>3.0.5.Final</version>
+            <version>${jboss_resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>jaxrs-api</artifactId>
-            <version>3.0.5.Final</version>
+            <version>${jboss_resteasy.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-servlet-initializer</artifactId>
-            <version>3.0.5.Final</version>
+            <version>${jboss_resteasy.version}</version>
         </dependency>    
         <dependency>
             <groupId>javax.json</groupId>
@@ -58,7 +62,18 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.10.Final</version>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.0</version>
+            <scope>provided</scope>
         </dependency>
         <!--*******************************hibernate********************************-->
     
@@ -73,8 +88,6 @@
         <!--*******************************junit********************************-->
 
     </dependencies>
-    
-      
     
 
     <build>
